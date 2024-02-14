@@ -1,0 +1,105 @@
+
+// Program: Exaado Capital Care
+// Developer: Forex Robot Easy Team
+// Developer's site: forexroboteasy.com
+
+// Close_Profit_Pips function
+void Close_Profit_Pips(double closeProfitPips) {
+    // Get current profit in pips
+    double currentProfitPips = GetProfitInPips();
+    
+    // Check if current profit reaches specified value
+    if (currentProfitPips >= closeProfitPips) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Profit in pips reached specified value.');
+    }
+}
+
+// Close_Profit_Money function
+void Close_Profit_Money(double closeProfitMoney) {
+    // Get current profit in monetary terms
+    double currentProfitMoney = GetProfitInMoney();
+    
+    // Check if current profit reaches specified value
+    if (currentProfitMoney >= closeProfitMoney) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Profit in monetary terms reached specified value.');
+    }
+}
+
+// Close_Profit_Percentage function
+void Close_Profit_Percentage(double closeProfitPercentage) {
+    // Get current profit percentage
+    double currentProfitPercentage = GetProfitPercentage();
+    
+    // Check if current profit percentage reaches specified value
+    if (currentProfitPercentage >= closeProfitPercentage) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Profit percentage reached specified value.');
+    }
+}
+
+// Cut_Loss_Pips function
+void Cut_Loss_Pips(double cutLossPips) {
+    // Get current loss in pips
+    double currentLossPips = GetLossInPips();
+    
+    // Check if current loss reaches specified value
+    if (currentLossPips >= cutLossPips) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Loss in pips reached specified value.');
+    }
+}
+
+// Cut_Loss_Money function
+void Cut_Loss_Money(double cutLossMoney) {
+    // Get current loss in monetary terms
+    double currentLossMoney = GetLossInMoney();
+    
+    // Check if current loss reaches specified value
+    if (currentLossMoney >= cutLossMoney) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Loss in monetary terms reached specified value.');
+    }
+}
+
+// Cut_Loss_P function
+void Cut_Loss_P(double cutLossPercentage) {
+    // Get current loss percentage
+    double currentLossPercentage = GetLossPercentage();
+    
+    // Check if current loss percentage reaches specified value
+    if (currentLossPercentage >= cutLossPercentage) {
+        // Close trades
+        CloseAllTrades();
+        
+        // Print log message
+        Print('Trades closed. Loss percentage reached specified value.');
+    }
+}
+
+// Main function
+void OnTick() {
+    // Call the trading functions with customizable values
+    Close_Profit_Pips(100); // Close trades when profit reaches 100 pips
+    Close_Profit_Money(500); // Close trades when profit reaches $500
+    Close_Profit_Percentage(10); // Close trades when profit percentage reaches 10%
+    Cut_Loss_Pips(50); // Cut losses and close trades when loss reaches 50 pips
+    Cut_Loss_Money(200); // Cut losses and close trades when loss reaches $200
+    Cut_Loss_P(5); // Cut losses and close trades when loss percentage reaches 5%
+}
